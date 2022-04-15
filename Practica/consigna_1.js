@@ -1,60 +1,77 @@
+// Star of class Contenedor
 class Contenedor {
     constructor(){
-        this.productos = [];
+        this.productos = [];                                    // Array of productos
     }
 
     save(producto){
-        this.productos.push(producto);
+        this.productos.push(producto);                          // Push producto to productos array
     }
 
     getById(id_prod){
-        let cont = 0;
-        for(let i = 0; i < this.productos.length; i++){
-            if(this.productos[i].id === id_prod){
-                return this.productos[i];
+        let cont = 0;                                           // Counter 
+        for(let i = 0; i < this.productos.length; i++){         // Star of for
+            if(this.productos[i].id === id_prod){               // Compare if id_prod is equal to id
+                return this.productos[i];                       // if True return the product selected
             }else{
-                cont++;
+                cont++;                                         // if False Counter is incremented
             }
         }
 
-        if(cont === this.productos.length);
+        if(cont === this.productos.length);                     // if the id_prod does not exist return null
         { return null;}
     }
 
     getAll(){
-        return this.productos;
+        return this.productos;                                  // return All Products
     }
 
-    deleteById(id_prod){
-        for(let i = 0; i < this.productos.length; i++){
-            if(this.productos[i].id === id_prod){
-                this.productos.splice(i,1);
+    deleteById(id_prod){    
+        for(let i = 0; i < this.productos.length; i++){         // start of for
+            if(this.productos[i].id === id_prod){               // Compare if id_prod is equal to id
+                this.productos.splice(i,1);                     // if True the product with the id selected is deleted
             }
         }
     }
 
     deleteAll(){
-        this.productos = [];
+        this.productos = [];                                    // delete all products assigning the productos array to void
     }
  }
 
-const carrito = new Contenedor();
-carrito.save({
+ // ========================================================== Test =========================================================================================================
+const carrito = new Contenedor();                               // carrito object is created
+
+carrito.save({                                                  // product id 15 is added to carrito
     id: 15,
-    title: 'carro',
+    title: 'Kia Sportage',
     price: 2500,
-    thumbnail: 'https://www.elcarrocolombiano.com/industria/top-75-los-carros-mas-vendidos-de-colombia-en-enero-de-2021/'
+    thumbnail: 'https://shorturl.ae/G6aUO'
    });
-carrito.save({
+
+carrito.save({                                                  // product id 20 is added to carrito
     id: 20,
-    title: 'carro',
-    price: 2500,
-    thumbnail: 'https://www.elcarrocolombiano.com/industria/top-75-los-carros-mas-vendidos-de-colombia-en-enero-de-2021/'
+    title: 'Chevrolet Captiva',
+    price: 5000,
+    thumbnail: 'https://shorturl.ae/rsLek'
 });
 
-//console.log(carrito.productos);
-console.log(carrito.getById(2));
-console.log(carrito.getAll());
-//carrito.deleteAll();
-carrito.deleteById(20);
-console.log(carrito.getAll());
+//========================================================== GetAll =========================================================================================================
+console.group('getAll');
+    console.log(carrito.getAll());
+console.groupEnd();
+//========================================================== getById =========================================================================================================
+console.group('getById');
+    console.log(carrito.getById(15));                           // as id 15 exist shows the values for the product
+    console.log(carrito.getById(1));                            // as id 1 does not exist shows null
+console.groupEnd();
+//========================================================== deleteById =====================================================================================================
+console.group('deleteById');
+    carrito.deleteById(20);
+    console.log(carrito.getAll());                              // shows only product with id 15
+console.groupEnd();
+//========================================================== deleteAll =======================================================================================================
+console.group('deleteAll');
+    carrito.deleteAll();
+    console.log(carrito.getAll());                             // doest not show no products 
+console.groupEnd();
