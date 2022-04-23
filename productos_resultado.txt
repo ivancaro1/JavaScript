@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Kia Sportage",
+    "price": 2500,
+    "thumbnail": "https://shorturl.ae/G6aUO",
+    "id": 16
+  },
+  {
+    "title": "Kialo Sportage",
+    "price": 1500,
+    "thumbnail": "https://shorturl.ae",
+    "id": 15
+  },
+  {
+    "title": "Kia Sportage",
+    "price": 2500,
+    "thumbnail": "https://shorturl.ae/G6aUO",
+    "id": 16
+  },
+  {
+    "title": "Kialo Sportage",
+    "price": 1500,
+    "thumbnail": "https://shorturl.ae",
+    "id": 15
+  }
+]
