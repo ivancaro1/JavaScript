@@ -1,4 +1,4 @@
-console.group('deleteAll');
-        await carrito.deleteAll()
-        console.log(await carrito.getAll())
-    console.groupEnd();
+    // console.group('deleteAll');
+    //     await carrito.deleteAll()
+    //     console.log(await carrito.getAll())
+    // console.groupEnd();

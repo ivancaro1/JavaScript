@@ -55,6 +55,7 @@ class ContenedorArchivo {
                 contenidoArchivo = await fs.promises.readFile(this.nombreArchivo,'utf-8')
                 return JSON.parse(contenidoArchivo) 
             }catch(err){
+                // console.log('Error de lectura')                 // if there is an error print a error message
                 contenidoArchivo = []
                 return contenidoArchivo
             }
@@ -103,6 +104,8 @@ class ContenedorArchivo {
 
  // ========================================================== Test =========================================================================================================
 (async () => {
+//  CUIDADO CON LAS RUTAS ABSOLUTAS, PARA ESTE CASO ES MEJOR LAS RUTAS RELATIVAS
+//  A NIVEL DEL ARCHIVO DONDE SE ESTÁ EJECUTANDO NODE
     const carrito = new ContenedorArchivo('productos_resultado.txt'); // carrito object is created
     console.group('getAllEmpty');
         console.log(await carrito.getAll())
