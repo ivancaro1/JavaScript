@@ -1,4 +1,15 @@
 {
+  "name":"javascriptbasics",
+  "version": "0.0.0",
+  "description": "javascript for backend",
+  "scripts": {
+    "test": "nodemon Practica/Consigna_3/clase_3_1.js",
+    "start": "node Practica/Consigna_3/clase_3.js"
+  },
+  "author": {
+    "name": "ivancaro1",
+    "email":"ivanfelipecaro98@gmail.com"
+  },
   "dependencies": {
     "express": "^4.17.3",
     "moment": "^2.29.3",
